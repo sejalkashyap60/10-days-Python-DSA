@@ -119,8 +119,3 @@
 
 
 
-# input
-class stack:
-    def __init__(self):
-        self.myStack=[]
-
