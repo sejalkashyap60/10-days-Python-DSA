@@ -175,8 +175,8 @@ class Linkedlist:
     
     def DisplayNode(self):
 
-        while Linkedlist.head != None:
-            print(Linkedlist.head.data,"|",self.head.next ,"->",end= '')
+        while self.head != None:
+            print(self.head.data,"|",self.head.next ,"->",end= '')
             self.head=self.head.next
 
     def AddNodeBeginning(self,value):
@@ -189,28 +189,62 @@ class Linkedlist:
             self.node.next=self.head
             self.head=self.node
 
+    # Add node at specific position
+    def Add_between(self, value, pos):
+        node = Node(value)
+        if self.head is None:
+            self.head=self.node
+            self.tail.node
+            return
+        elif pos==0:
+            node.next=self.head
+            self.head=node
+        else:
+            temp=self.head
+            for _ in range(pos -1):
+                temp=temp.next
+            node.next=temp.next
+            temp.next=node
 
-if __name__ == '__main__':
-    object=Linkedlist()#Linkedlist object created
-    #MEnu driven options
-    while True:
-        print('1. Add Node LinkedList : ')
-        print("2. Add Node in Beg :" )
-        print("3. Add Node in Between :" )
-        print("4. Add Node in End :" )
-        print("5. Display  Linked List  :" )
-        print("6. Exit:" )
-        ch = int(input("Enter choice : "))
-        if  ch == 1:
-            value=int(input('Enter value for node: '))
-            object.addNode(value)
-            print('Node added successfully in single LinkedList: ')
-        elif ch ==2:
-            value=int(input("ENter value for node: "))
-            object.AddNodeBeginning(value)
-        elif ch == 5:
-            object.DisplayNode()
+        
+        # while count < pos - 1 and curr is not None:
+        #     curr = curr.next
+        #     count += 1
+        # if curr is None:
+        #     print("Position Invalid")
+        #     return
+        # newnode.next = curr.next
+        # curr.next = newnode
 
+
+
+# if __name__ == '__main__':
+#     object=Linkedlist()#Linkedlist object created
+#     #MEnu driven options
+#     while True:
+#         print('1. Add Node LinkedList : ')
+#         print("2. Add Node in Beg :" )
+#         print("3. Add Node in Between :" )
+#         print("4. Add Node in End :" )
+#         print("5. Display  Linked List  :" )
+#         print("6. Exit:" )
+#         ch = int(input("Enter choice : "))
+#         if  ch == 1:
+#             value=int(input('Enter value for node: '))
+#             object.addNode(value)
+#             print('Node added successfully in single LinkedList: ')
+#         elif ch ==2:
+#             value=int(input("Enter value for node: "))
+#             object.AddNodeBeginning(value)
+#         elif ch==3:
+#             pos=int(input("add node specific location: "))
+#             value=int(input("Enter value to add : "))
+
+#             object.Add_between(value, pos)
+#         elif ch == 5:
+#             object.DisplayNode()
+#         else:
+#             sys.exit()
 
 # # Linked List with All Menu Operations
 
@@ -419,6 +453,5 @@ if __name__ == '__main__':
 
 #             print("Program Ended")
 #             break
-
 #         else:
 #              print("Invalid Choice")
