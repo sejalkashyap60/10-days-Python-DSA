@@ -1,0 +1,4 @@
+Vibe coding is a software development approach where you build applications simply by describing
+ what you want in plain, conversational English to an AI assistant. Instead of writing code 
+ line-by-line, you guide the AI to generate, test, and refine the program, letting the AI handle 
+ the complex technical implementation
