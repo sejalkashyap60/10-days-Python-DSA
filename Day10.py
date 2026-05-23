@@ -193,16 +193,27 @@
 
 
 class HashTable:
-    def __init__(self,size):
-        self.size=size
-        self.table=[[] for _ in range(size)]
+    def __init__(self, size):
+        self.size = size
+        self.table = [[] for _ in range(size)]
 
-    def hash_function(self,key)
+    def hash_function(self, key):   # colon added here
         return key % self.size
-    
-    def insert(self,key):
-        index = self .hash_function(key)
+
+    def insert(self, key):
+        index = self.hash_function(key)
         self.table[index].append(key)
-    
+
     def display(self):
         print(self.table)
+
+
+
+ht = HashTable(5)
+
+ht.insert(10)
+ht.insert(15)
+ht.insert(7)
+ht.insert(22)
+
+ht.display()
